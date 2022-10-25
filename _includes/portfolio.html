@@ -1,0 +1,33 @@
+<div class="portfolio">
+{% for item in include.list %}
+    <div>
+    {% for project in site.posts %}
+        {% if project.title != item.title %}
+            {% continue %}
+        {% endif %}
+        
+        {% comment %}
+            This is the project component.
+            `project` has all page variables specified here:
+            https://jekyllrb.com/docs/variables/
+        {% endcomment%}
+        <!-- {{ project.date | date: "%Y/" | prepend: "/posts/" | append: "projec"}} -->
+        <div class="project">
+            <div class="thumbnail">
+                <a href="{{ project.path }}">
+                {% assign thumb_path = "/assets" | append: project.resources %}
+                {% include image.html name="thumbnail.jpg" class="thumbnail" path=thumb_path %}
+                <span>
+                    <h1>{{ project.title }}</h1>
+                    <br/>
+                    <p>{{ project.description }}</p>
+                </span>
+                </a>
+            </div>
+        </div>
+
+        {% break %}
+    {% endfor %}
+    </div>
+{% endfor %}
+</div>
