@@ -18,8 +18,19 @@ function burger()
 
         button.addEventListener('click', function (e)
         {
-            el.classList.toggle('active');
             button.classList.toggle('active');
+
+            new_height = 0;
+            if (el.classList.toggle('active'))
+            {
+                for (let j = 0; j < el.children.length; j++)
+                {
+                    let child = el.children[j];
+                    new_height += child.clientHeight;
+                }
+            }
+
+            el.style.setProperty('max-height', new_height + "px", 'important');
         });
     }
 };
