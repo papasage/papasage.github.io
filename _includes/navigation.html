@@ -1,7 +1,7 @@
-<nav class="main line-1">
-    <div class="content-wrapper my-3">
+<nav class="main line-1  py-3">
+    <div class="content-wrapper">
         <div class="content">
-            <div class="flex flex-column lg:flex-row items-center">
+            <div class="flex flex-column lg:flex-row lg:items-center">
                 <div class="flex flex-row items-center lg:mr-auto w-full lg:w-auto">
                     <!-- logo -->
                     <div class="">
@@ -12,10 +12,11 @@
                 </div>
                 
                 <!-- pc navigation -->
-                <div class="display-none lg:flex flex-row">
+                <div class="stateful links overflow-hidden lg:overflow-visible flex flex-column lg:flex-row" for="nav-burger">
+                    <div class="pt-4 lg:pt-0"></div>
                     {% for page in site.data.navigation %}
                         {% if page.title %}
-                            <a class="page-link lg:ml-5" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                            <a class="page-link lg:ml-5 my-1" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                         {% endif %}
                     {% endfor %}
                 </div>

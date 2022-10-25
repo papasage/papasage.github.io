@@ -9,8 +9,12 @@
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
-}
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
 
 
 /**
@@ -23,13 +27,13 @@ ul, ol, dl, figure,
 }
 
 
-hr{
+hr {
     /* Inset, by Dan Eden */
     border: 0;
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
+    margin: $vertical-spacing-unit 0;
 }
 
 
@@ -42,6 +46,15 @@ figure > img {
 
 figcaption {
     font-size: $small-font-size;
+}
+
+.caption
+{
+    height: 100%;
+    color: $caption_color;
+    text-align: center;
+    vertical-align: middle;
+    font-size: $caption_font_size;
 }
 
 
@@ -67,6 +80,11 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 100;
+}
+
+header.main
+{
+    margin-bottom: 40px;
 }
 
 
@@ -139,6 +157,14 @@ pre {
         padding-left: 0;
     }
 }
+
+
+// buttons
+button
+{
+    border: none;
+}
+
 
 // reponsive layout base
 .content-wrapper

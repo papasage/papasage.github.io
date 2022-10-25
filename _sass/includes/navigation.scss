@@ -1,7 +1,22 @@
 nav.main
 {
+    box-shadow: rgba(0,0,0, 10%) 0 0 1rem;
     border-bottom:1px solid #ddd;
     background-color:#fff;
 
     font-size: 1.5rem;
+
+    @media (max-width: 991px)
+    {
+        .links
+        {
+            max-height: 0;
+            transition: max-height .3s;
+        }
+        
+        .links.active
+        {
+            max-height: 9rem;
+        }
+    }
 }
