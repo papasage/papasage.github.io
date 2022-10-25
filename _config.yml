@@ -8,7 +8,7 @@ title: Nick Maclean
 description: > # this means to ignore newlines until "baseurl:"
   A simple, whitespace, helvetica based portfolio theme.
   
-baseurl: /-folio-theme/ # the subpath of your site, e.g. /blog/
+baseurl: /-folio-theme # the subpath of your site, e.g. /blog/
 url: https://nicolasmaclean.com/-folio-theme/
 
 
@@ -18,7 +18,10 @@ markdown: kramdown
 highlighter: rouge
 
 include: ["_pages", "_redirects"]
-exclude: ["README.md"]
+exclude: ["README.md", "Gemfile", "Gemfile.lock"]
+
+plugins:
+  - jekyll-redirect-from
 
 
 
@@ -28,12 +31,6 @@ defaults:
     values:
       layout: post
       permalink: /posts/:year/:title/
-
-
-
-# Pagination
-paginate: 15
-paginate_path: "/posts/page:num/"
 
 
 

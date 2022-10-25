@@ -1,9 +1,14 @@
 {% if include.path %}
     {% assign path = include.path %}
 {% elsif page.collection == "posts" %}
-    {% assign path = "/assets/" | prepend: site.baseurl | append: page.dir %}
+    {% assign path = "/assets/" | append: page.dir %}
 {% else %}
-    {% assign path = "/assets/media" | prepend: site.baseurl %}
+    {% assign path = "/assets/media" %}
 {% endif %}
 
-<img class="{{ include.class }}" src="{{ path | append: "/" | append: include.name }}">
+{% assign path = path | append: "/" | append: include.name%}
+{% unless include.ignore-baseurl %}
+    {% assign path = path | prepend: site.baseurl %}
+{% endunless %}
+
+<img class="{{ include.class }}" style="{{ include.style }}" src="{{ path }}">

@@ -1,15 +1,11 @@
 [
   {
-    title: "Programming",
-    url: "/"
-  },
-  {
-    title: "Film",
-    url: "/film/"
-  },
-  {
     title: "About",
     url: "/about/"
+  },
+  {
+    title: "Code",
+    url: "/"
   },
   {
     title: "Archive",

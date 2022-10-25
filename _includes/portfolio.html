@@ -1,4 +1,4 @@
-<div class="portfolio">
+<div class="portfolio {{ include.class }}">
 {% for item in include.list %}
     <div>
     {% for project in site.posts %}
@@ -10,21 +10,15 @@
             This is the project component.
             `project` has all page variables specified here:
             https://jekyllrb.com/docs/variables/
-        {% endcomment%}
-        <!-- {{ project.date | date: "%Y/" | prepend: "/posts/" | append: "projec"}} -->
-        <div class="project">
-            <div class="thumbnail">
-                <a href="{{ project.path }}">
-                {% assign thumb_path = "/assets" | append: project.resources %}
-                {% include image.html name="thumbnail.jpg" class="thumbnail" path=thumb_path %}
-                <span>
-                    <h1>{{ project.title }}</h1>
-                    <br/>
-                    <p>{{ project.description }}</p>
-                </span>
-                </a>
-            </div>
-        </div>
+        {% endcomment %}
+        <a href="{{ site.baseurl | append: project.url }}" class="flex flex-column lg:flex-row items-center mb-5">
+            {% assign thumb_path = "/assets" | append: project.url %}
+            {% include image.html name="thumbnail.jpg" path=thumb_path style="width: 10rem;"%}
+            <span class="mt-4 lg:ml-6">
+                <h1 class="mb-1 text-center lg:text-left">{{ project.title }}</h1>
+                <p class="caption" style="text-align: left; font-size: 1rem;">{{ project.description }}</p>
+            </span>
+        </a>
 
         {% break %}
     {% endfor %}

@@ -36,6 +36,11 @@ hr {
     margin: $vertical-spacing-unit 0;
 }
 
+.post-title
+{
+    color: $red;
+}
+
 
 /**
  * Figures
@@ -173,7 +178,7 @@ button
     padding-right: 1.75rem;
 }
 
-$max-width: 900px;
+$max-width: 991px;
 .content, .children-are-content > *:not(.ignore)
 {
     max-width: $max-width;

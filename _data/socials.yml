@@ -1,20 +1,20 @@
 [
   {
-    name: Email,
-    text: dummy@gmail.com,
-    link: mailto:dummy@gmail.com,
-    icon: "fa fa-envelope",
-  },
-  {
     name: GitHub,
     text: nicolasmaclean,
-    link: https://github.com/nicolasmaclean,
-    icon: "fa fa-github",
+    link: /github/,
+    icon: "fa fa-github-square",
+  },
+  {
+    name: Email,
+    text: dummy@gmail.com,
+    link: /mail/,
+    icon: "fa fa-envelope-square",
   },
   {
     name: LinkedIn,
     text: nick-maclean,
-    link: https://www.linkedin.com/in/nick-maclean,
-    icon: "fa fa-linkedin",
+    link: /linkedin/,
+    icon: "fa fa-linkedin-square",
   }
 ]
