@@ -1,0 +1,5 @@
+<div class="socials {{ include.class }}">
+{% for social in site.data.socials %}
+    <a href="{{ social.link }}" target="_blank" class="{{ include.link-class }}"> <i class="{{ social.icon }}"></i> {% if include.text %} {{ social.name }} {% endif %}</a>
+{% endfor %}
+</div>

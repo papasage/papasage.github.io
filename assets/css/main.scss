@@ -1,0 +1,13 @@
+---
+# all .scss files outside of /_sass/ need the empty pair "---"
+---
+@charset "utf-8";
+
+@import "raisincss.min",
+        "theme",
+        "syntax-highlighting",
+        "default",
+        "includes/footer",
+        "includes/navigation",
+        "includes/burger"
+;

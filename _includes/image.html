@@ -1,0 +1,9 @@
+{% if include.path %}
+    {% assign path = include.path %}
+{% elsif page.collection == "posts" %}
+    {% assign path = "/assets/"  | append: page.dir %}
+{% else %}
+    {% assign path = "/assets/media" %}
+{% endif %}
+
+<img class="{{ include.class }}" src="{{ path | append: "/" | append: include.name }}">
