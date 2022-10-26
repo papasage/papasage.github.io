@@ -1,0 +1,35 @@
+{% if include.path %}
+    {% assign path = include.path %}
+{% elsif page.collection == "posts" %}
+    {% assign path = "/assets/" | append: page.url %}
+{% else %}
+    {% assign path = "/assets/media" %}
+{% endif %}
+
+{% assign path = path | append: "/" %}
+{% unless include.ignore-baseurl %}
+    {% assign path = path | prepend: site.baseurl %}
+{% endunless %}
+
+{% if include.img %}
+
+<figure class="{{ include.class }}" style="{{ include.style }}">
+    <img class="{{ include.img-class }}" src="{{ path | append: include.img }}">
+    {% if include.caption %}
+        <figcaption> {{ include.caption }} </figcaption>
+    {% endif %}
+</figure>
+
+{% elsif include.video %}
+
+<figure class="{{ include.class }}" style="{{ include.style }}">
+    <video muted="" autoplay="" controls="" loop="" class="w-full">
+        <source src="{{ path | append: include.video }}">
+        Your browser will not load/play .mp4 files.
+    </video>
+    {% if include.caption %}
+        <figcaption> {{ include.caption }} </figcaption>
+    {% endif %}
+</figure>
+
+{% endif %}

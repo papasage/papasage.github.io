@@ -15,7 +15,7 @@ layout: page
 		</p>
 	</div>
 
-	{% include image.html class="w-3/4 border-radius-lg" name="prof_pic.png" %}
+	{% include media.html class="w-3/4" img-class="border-radius-lg" img="prof_pic.png" %}
 </div>
 
 <hr/>

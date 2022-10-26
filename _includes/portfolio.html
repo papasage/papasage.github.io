@@ -11,10 +11,10 @@
             `project` has all page variables specified here:
             https://jekyllrb.com/docs/variables/
         {% endcomment %}
-        <a href="{{ site.baseurl | append: project.url }}" class="flex flex-column lg:flex-row items-center mb-5">
+        <a href="{{ site.baseurl | append: project.url }}" class="flex flex-column lg:flex-row items-center">
             {% assign thumb_path = "/assets" | append: project.url %}
-            {% include image.html name="thumbnail.jpg" path=thumb_path style="width: 10rem;"%}
-            <span class="mt-4 lg:ml-6">
+            {% include media.html img="thumbnail.png" img-class="border-radius-sm" path=thumb_path style="width: 10rem;"%}
+            <span class="mt-4 lg:mt-0 lg:ml-6">
                 <h1 class="mb-1 text-center lg:text-left">{{ project.title }}</h1>
                 <p class="caption" style="text-align: left; font-size: 1rem;">{{ project.description }}</p>
             </span>
@@ -23,5 +23,6 @@
         {% break %}
     {% endfor %}
     </div>
+    <hr>
 {% endfor %}
 </div>

@@ -62,6 +62,26 @@ figcaption {
     font-size: $caption_font_size;
 }
 
+article.main
+{
+    figure:not(.highlight)
+    {
+        @media (min-width: 992px)
+        {
+            width: 80%;
+        }
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    figcaption
+    {
+        text-align: center;
+    }
+}
+
 
 
 /**
@@ -85,11 +105,26 @@ li {
  */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 100;
+    line-height: 2.25rem;
 }
 
 header.main
 {
     margin-bottom: 40px;
+}
+
+article.main
+{
+    h1, h2, h3, h4, h5, h6
+    {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h1
+    {
+        color: $red;
+    }
 }
 
 
@@ -193,4 +228,12 @@ $max-width: 991px;
         padding-left: 1.75rem;
         padding-right: 1.75rem;
     }
+}
+
+
+
+// misc
+.portfolio h1
+{
+    color: $red;
 }
